@@ -1,0 +1,1065 @@
+# Translation of Plugins - Contact Form 7 - Stable (latest release) in Serbian
+# This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-01-31 23:08:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: sr_RS\n"
+"Project-Id-Version: Plugins - Contact Form 7 - Stable (latest release)\n"
+
+#: modules/sendinblue/contact-form-properties.php:98
+#: modules/sendinblue/service.php:177
+msgid "Brevo integration"
+msgstr "Интеграција Brevo"
+
+#. translators: 1: blog name, 2: blog URL
+#: includes/contact-form-template.php:111
+msgid "This email is a receipt for your contact form submission on our website (%1$s %2$s) in which your email address was used. If that was not you, please ignore this message."
+msgstr "Ова е-пошта је потврда за вашу поднету поруку преко обрасца за контакт на нашем веб месту (%1$s %2$s), у којој је коришћена ваша е-пошта. Ако то нисте били ви, молимо вас да игноришете ову поруку."
+
+#. translators: 1: blog name, 2: blog URL
+#: includes/contact-form-template.php:77
+msgid "This is a notification that a contact form was submitted on your website (%1$s %2$s)."
+msgstr "Ово је обавештење да је образац контакта предат на вашем веб месту (%1$s %2$s)."
+
+#: includes/config-validator/mail.php:234
+#: includes/config-validator/mail.php:324
+msgid "Unsafe email config is used without sufficient protection."
+msgstr "Користи се незаштићена конфигурација е-поште без довољне заштите."
+
+#: includes/config-validator/validator.php:239
+msgid "Configuration error is detected."
+msgstr "Откривена је грешка у конфигурацији."
+
+#: modules/sendinblue/service.php:189
+msgid "Brevo is active on this site."
+msgstr "Брево је укључено на овом сајту."
+
+#: modules/sendinblue/contact-form-properties.php:110
+#: modules/sendinblue/contact-form-properties.php:405
+#: modules/sendinblue/service.php:30
+msgid "Brevo"
+msgstr "Брево"
+
+#: includes/contact-form-functions.php:270 includes/contact-form.php:571
+#: includes/js/index.js:1
+msgid "Error:"
+msgstr "Грешка:"
+
+#: includes/contact-form-functions.php:271
+msgid "Contact form not found."
+msgstr "Образац за контакт није пронађена."
+
+#: includes/block-editor/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "образац"
+
+#: includes/block-editor/block.json
+msgctxt "block description"
+msgid "Insert a contact form you have created with Contact Form 7."
+msgstr "Уметните образац за контакт који сте направили помоћу Contact Form 7."
+
+#: includes/block-editor/block.json
+msgctxt "block title"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: modules/select.php:84
+msgid "&#8212;Please choose an option&#8212;"
+msgstr "—Молимо вас изаберите опцију—"
+
+#: modules/akismet/service.php:77
+msgid "Akismet is active on this site."
+msgstr "Akismet је укључен на овом сајту."
+
+#: includes/contact-form-template.php:42
+msgid "Submit"
+msgstr "Пошаљи"
+
+#: modules/sendinblue/service.php:127 modules/sendinblue/service.php:138
+msgid "Error"
+msgstr "Грешка"
+
+#: includes/config-validator/mail.php:437
+msgid "The total size of attachment files is too large."
+msgstr "Укупна величина докумената у прилогу је превелика."
+
+#: includes/config-validator/form.php:45
+msgid "Unavailable HTML elements are used in the form template."
+msgstr "Недоступни HTML елементи су коришћени у шаблону обрасца."
+
+#: modules/recaptcha/service.php:312
+msgid "reCAPTCHA is active on this site."
+msgstr "reCAPTCHA је укључен на овом веб месту."
+
+#: modules/recaptcha/recaptcha.php:148
+msgid "reCAPTCHA response token is empty."
+msgstr "Токен за одговор на reCAPTCHA је празан."
+
+#. translators: 1: value of reCAPTCHA score 2: value of reCAPTCHA threshold
+#: modules/recaptcha/recaptcha.php:155
+msgid "reCAPTCHA score (%1$.2f) is lower than the threshold (%2$.2f)."
+msgstr "reCAPTCHA резултат (%1$.2f) је нижи од постављене доње границе (%2$.2f)."
+
+#: includes/submission.php:660
+msgid "Submitted nonce is invalid."
+msgstr "Послат једнократни узорак је неважећи."
+
+#: includes/submission.php:651
+msgid "User-Agent string is unnaturally short."
+msgstr "Стринг Корисничког агента је неприродно кратак."
+
+#: modules/akismet/akismet.php:84
+msgid "Akismet returns a spam response."
+msgstr "Акисмет враћа одговор непожељне поште."
+
+#: modules/recaptcha/service.php:397 modules/stripe/service.php:294
+#: modules/turnstile/service.php:376
+msgid "Save Changes"
+msgstr "Сачувај измене"
+
+#: modules/recaptcha/recaptcha.php:255 modules/recaptcha/service.php:300
+msgid "reCAPTCHA (v3)"
+msgstr "reCAPTCHA (v3)"
+
+#: modules/constant-contact/constant-contact.php:206
+#: modules/recaptcha/service.php:392 modules/stripe/service.php:290
+#: modules/turnstile/service.php:372
+msgctxt "API keys"
+msgid "Remove Keys"
+msgstr "Уклони кључеве"
+
+#: modules/constant-contact/constant-contact.php:56
+msgid "Constant Contact"
+msgstr "Constant Contact"
+
+#: modules/constant-contact/constant-contact.php:191
+msgid "App Secret"
+msgstr "Тајни кључ апликације"
+
+#. translators: 1: response code, 2: message, 3: body, 4: URL
+#: includes/functions.php:621
+msgid "HTTP Response: %1$s %2$s %3$s from %4$s"
+msgstr "HTTP Одговор: %1$s %2$s %3$s са %4$s"
+
+#: modules/constant-contact/constant-contact.php:169
+msgid "API Key"
+msgstr "API кључ"
+
+#: includes/integration.php:26
+msgid "Email marketing"
+msgstr "Маркетинг е-поште"
+
+#: modules/recaptcha/service.php:289
+msgid "reCAPTCHA protects you against spam and other types of automated abuse. With Contact Form 7&#8217;s reCAPTCHA integration module, you can block abusive form submissions by spam bots."
+msgstr "reCAPTCHA вас штити од непожељног садржаја и других типова аутоматизованог злоупотребе. Са модулом интеграције reCAPTCHA у Contact Form 7, можете блокирати злоупотребне пријаве обрасца од стране спам ботова."
+
+#. translators: %s: link labeled 'reCAPTCHA (v3)'
+#: modules/recaptcha/recaptcha.php:252
+msgid "API keys for reCAPTCHA v3 are different from those for v2; keys for v2 do not work with the v3 API. You need to register your sites again to get new keys for v3. For details, see %s."
+msgstr "API кључеви за reCAPTCHA v3 су различити од оних за v2; кључеви за v2 не функционишу са v3 API. Морате поново регистровати своје сајтове да бисте добили нове кључеве за v3. За детаље, погледајте %s."
+
+#: includes/config-validator/mail.php:423
+msgid "It is not allowed to use files outside the wp-content directory."
+msgstr "Није дозвољено користити документа изван wp-content директоријума."
+
+#: admin/edit-contact-form.php:386
+msgid "Professional services"
+msgstr "Стручне услуге"
+
+#: admin/edit-contact-form.php:385
+msgid "https://contactform7.com/custom-development/"
+msgstr "https://contactform7.com/custom-development/"
+
+#: admin/edit-contact-form.php:377
+msgid "Support forums"
+msgstr "Форуми подршке"
+
+#: admin/edit-contact-form.php:376
+msgid "https://wordpress.org/support/plugin/contact-form-7/"
+msgstr "https://wordpress.org/support/plugin/contact-form-7/"
+
+#: admin/edit-contact-form.php:354
+msgid "Here are some available options to help solve your problems."
+msgstr "Ево неколико доступних опција које вам могу помоћи у решаванју проблема."
+
+#: admin/edit-contact-form.php:342
+msgid "Do you need help?"
+msgstr "Да ли вам је потребна помоћ?"
+
+#: modules/acceptance.php:320
+msgid "Condition"
+msgstr "Услов"
+
+#: includes/submission.php:120
+msgid "Sending mail has been aborted."
+msgstr "Слање поруке је обустављено."
+
+#. translators: 1: 'Consented' or 'Not consented', 2: conditions
+#: modules/acceptance.php:240
+msgctxt "mail output for acceptance checkboxes"
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: modules/acceptance.php:224
+msgid "Not consented"
+msgstr "Није сагласно"
+
+#: modules/acceptance.php:222
+msgid "Consented"
+msgstr "Сагласно"
+
+#: admin/includes/editor.php:460
+msgid "https://contactform7.com/editing-messages/"
+msgstr "https://contactform7.com/editing-messages/"
+
+#: admin/includes/editor.php:87
+msgid "https://contactform7.com/editing-form-template/"
+msgstr "https://contactform7.com/editing-form-template/"
+
+#: includes/contact-form.php:546 includes/contact-form.php:1069
+msgid "This contact form is available only for logged in users."
+msgstr "Контакт образац је доступан само за пријављене кориснике."
+
+#: includes/config-validator/additional-settings.php:19
+msgid "Deprecated settings are used."
+msgstr "Кориштена су застарела подешавања."
+
+#: includes/rest-api.php:323
+msgid "There was an error deleting the contact form."
+msgstr "Дошло је до грешке приликом брисања обрасца."
+
+#: includes/rest-api.php:66 includes/rest-api.php:82 includes/rest-api.php:98
+msgid "You are not allowed to access the requested contact form."
+msgstr "Није вам дозвољено да приступите траженом контакт обрасцу."
+
+#: includes/rest-api.php:245 includes/rest-api.php:267
+#: includes/rest-api.php:314 includes/rest-api.php:353
+#: includes/rest-api.php:425 includes/rest-api.php:444
+msgid "The requested contact form was not found."
+msgstr "Тражени контакт образац није пронађен."
+
+#: includes/rest-api.php:44
+msgid "You are not allowed to create a contact form."
+msgstr "Није вам дозвољено да креирате контакт образац."
+
+#: includes/rest-api.php:197
+msgid "Cannot create existing contact form."
+msgstr "Није могуће креирати постојећи контакт образац."
+
+#: includes/rest-api.php:30
+msgid "You are not allowed to access contact forms."
+msgstr "Није вам дозвољено да приступите контакт обрасцу."
+
+#: includes/config-validator/mail.php:409
+msgid "Attachment file does not exist at %path%."
+msgstr "Датотека прилога не постоји на %path%."
+
+#: includes/config-validator/messages.php:29
+msgid "HTML tags are used in a message."
+msgstr "HTML ознаке су коришћене у поруци."
+
+#: includes/config-validator/mail.php:198
+msgid "Sender email address does not belong to the site domain."
+msgstr "Адреса е-поште пошиљаоца не припада домену веб места."
+
+#. translators: %s: number of errors detected
+#: admin/includes/class-contact-forms-list-table.php:131
+msgid "%s configuration error detected"
+msgid_plural "%s configuration errors detected"
+msgstr[0] "%s грешка у конфигурацији је откривена"
+msgstr[1] "%s грешке у конфигурацији су откривене"
+msgstr[2] "%s грешака у конфигурацији је откривено"
+
+#: includes/config-validator/mail.php:160
+#: includes/config-validator/mail.php:344
+msgid "There is a possible empty field."
+msgstr "Постоји могуће празно поље."
+
+#: includes/config-validator/mail.php:180
+#: includes/config-validator/mail.php:217
+msgid "Invalid mailbox syntax is used."
+msgstr "Користи се неважећа синтакса сандучета е-поште."
+
+#: includes/config-validator/mail.php:297
+msgid "There are invalid mail header fields."
+msgstr "Одређена поља у заглављу е-поште су неважећа."
+
+#: includes/config-validator/mail.php:310
+msgid "Invalid mailbox syntax is used in the %name% field."
+msgstr "Неважећа синтакса поштанског сандучета је искоришћена у пољу %name%."
+
+#. translators: %names%: a list of form control names
+#: includes/config-validator/form.php:32
+msgid "Unavailable names (%names%) are used for form controls."
+msgstr "Недоступна имена (%names%) су коришћена за контроле обрасца."
+
+#: admin/admin.php:643 includes/rest-api.php:209 includes/rest-api.php:278
+msgid "There was an error saving the contact form."
+msgstr "Дошло је до грешке приликом снимања обрасца за контакт."
+
+#: admin/includes/welcome-panel.php:67
+msgid "https://contactform7.com/comment-blacklist/"
+msgstr "https://contactform7.com/comment-blacklist/"
+
+#: admin/includes/welcome-panel.php:56
+msgid "Getting spammed? You have protection."
+msgstr "Добијате нежељене поруке? Имате заштиту."
+
+#: admin/includes/welcome-panel.php:104
+msgid "Before you cry over spilt mail&#8230;"
+msgstr "Пре него што заплачете над просутом е-поштом&#8230;"
+
+#: admin/includes/welcome-panel.php:109
+msgid "Contact Form 7 does not store submitted messages anywhere. Therefore, you may lose important messages forever if your mail server has issues or you make a mistake in mail configuration."
+msgstr "Contact Form 7 не складишти примљене поруке. Самим тим, уколико ваш сервер за е-пошту има неке проблеме или ако направите неке грешке у поставкама е-поште, можете заувек изгубити важне поруке."
+
+#: admin/includes/welcome-panel.php:61
+msgid "Spammers target everything; your contact forms are not an exception. Before you get spammed, protect your contact forms with the powerful anti-spam features Contact Form 7 provides."
+msgstr "Спамери циљају на све; ваши контакт обрсаци нису изузетак. Заштите своје контакт обрасце моћним анти-спам функционалностима које пружа Contact Form 7 пре него што примите нежељену пошту."
+
+#. translators: 1: WordPress hook name, 2: version number, 3: alternative hook
+#. name
+#: includes/functions.php:525
+msgid "Hook %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
+msgstr "Копче %1$s је <strong>застарело</strong> од издања Contact Form 7 %2$s! Уместо њега користите %3$s."
+
+#: includes/config-validator/form.php:16
+msgid "Multiple form controls are in a single label element."
+msgstr "Вишеструке контроле образаца су смештене унутар oзнаке јединственог елемента."
+
+#: admin/includes/config-validator.php:175
+msgid "FAQ about Configuration Validator"
+msgstr "Информације о валидатору конфигурације"
+
+#: admin/includes/config-validator.php:174
+msgid "https://contactform7.com/configuration-validator-faq/"
+msgstr "https://contactform7.com/configuration-validator-faq/"
+
+#: includes/file.php:106
+msgid "There was an unknown error uploading the file."
+msgstr "Постојала је непозната грешка током отпремања фајла."
+
+#: includes/file.php:111
+msgid "You are not allowed to upload files of this type."
+msgstr "Није вам дозвољено да отпремите фајл овог типа."
+
+#: modules/quiz.php:181
+msgid "The answer to the quiz is incorrect."
+msgstr "Одговор на упитник је нетачан."
+
+#: includes/file.php:121
+msgid "There was an error uploading the file."
+msgstr "Постојала је грешка током отпремања датотеке."
+
+#: admin/includes/config-validator.php:75
+msgid "You are not allowed to validate configuration."
+msgstr "Није вам дозвољено да потврдите конфигурацију."
+
+#: admin/includes/config-validator.php:142
+msgid "Validate Configuration"
+msgstr "Потврдите конфигурацију"
+
+#: admin/admin.php:661
+msgid "Configuration validation completed. No invalid contact form was found."
+msgstr "Завршено потврђивање конфигурације. Нема пронађених неважећих садржајних форми."
+
+#: admin/includes/config-validator.php:53
+msgid "Validate Contact Form 7 Configuration"
+msgstr "Потврдите валидацију садржајне форме 7"
+
+#: admin/includes/config-validator.php:47
+msgid "Misconfiguration leads to mail delivery failure or other troubles. Validate your contact forms now."
+msgstr "Погрешна конфигурација доводи до грешке у достави мејлова и других проблема. Потврдите своју садржајну форму сада."
+
+#. translators: 1: blog name, 2: [your-subject]
+#: includes/contact-form-template.php:52 includes/contact-form-template.php:96
+msgctxt "mail subject"
+msgid "%1$s \"%2$s\""
+msgstr "%1$s \"%2$s\""
+
+#: includes/contact-form-template.php:184
+msgid "You must accept the terms and conditions before sending your message."
+msgstr "Морате прихватити услове пре слања ваше поруке."
+
+#. translators: %s: number of contact forms
+#: admin/admin.php:653
+msgid "Configuration validation completed. %s invalid contact form was found."
+msgid_plural "Configuration validation completed. %s invalid contact forms were found."
+msgstr[0] "Подешавање је комплетирано. Нашли смо неисправан формулар."
+msgstr[1] "Подешавање је комплетирано. %s неисправних формулара је нађено."
+msgstr[2] "Подешавање је комплетирано. %s неисправних формулара је нађено."
+
+#: includes/contact-form-template.php:164
+msgid "Thank you for your message. It has been sent."
+msgstr "Хвала вам на вашој поруци. Она је већ послата."
+
+#: includes/contact-form-template.php:169
+#: includes/contact-form-template.php:179
+msgid "There was an error trying to send your message. Please try again later."
+msgstr "Дошло је до грешке покушавајући да пошаљемо вашу поруку. Молимо вас покушајте поново касније."
+
+#: includes/config-validator/validator.php:56
+msgid "https://contactform7.com/configuration-errors/"
+msgstr "https://contactform7.com/configuration-errors/"
+
+#. translators: %s: number of contact forms
+#: admin/includes/config-validator.php:118
+msgid "Validate %s contact form now"
+msgid_plural "Validate %s contact forms now"
+msgstr[0] "Потврди %s контакт образац"
+msgstr[1] "Потврди %s контакт обрасца"
+msgstr[2] "Потврди %s контакт образаца"
+
+#: includes/contact-form-template.php:174
+msgid "One or more fields have an error. Please check and try again."
+msgstr "Једно или више поља има грешку. Молим вас проверите и покушајте поново."
+
+#: modules/recaptcha/service.php:29
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+#: modules/sendinblue/service.php:139
+msgid "Invalid key values."
+msgstr "Неважеће кључне вредности."
+
+#: modules/recaptcha/service.php:269 modules/sendinblue/service.php:147
+#: modules/stripe/service.php:153 modules/turnstile/service.php:246
+msgid "Settings saved."
+msgstr "Сачувана подешавања."
+
+#: modules/recaptcha/service.php:351 modules/turnstile/service.php:334
+msgid "Site Key"
+msgstr "Клјуч сајта"
+
+#: modules/recaptcha/service.php:368 modules/stripe/service.php:269
+#: modules/turnstile/service.php:351
+msgid "Secret Key"
+msgstr "Тајни кључ"
+
+#: modules/recaptcha/recaptcha.php:254 modules/recaptcha/service.php:299
+msgid "https://contactform7.com/recaptcha/"
+msgstr "https://contactform7.com/recaptcha/"
+
+#: modules/file.php:205
+msgid "Acceptable file types"
+msgstr "Дозвољене врсте датотека"
+
+#: modules/akismet/service.php:22
+msgid "Akismet"
+msgstr "Акисмет"
+
+#: admin/includes/tag-generator.php:436
+msgid "Default value"
+msgstr "Подразумевана вредност"
+
+#. translators: %s: [your-name] [your-email]
+#: includes/contact-form-template.php:64
+msgid "From: %s"
+msgstr "Од: %s"
+
+#: modules/submit.php:100
+msgid "Label"
+msgstr "Ознака"
+
+#: includes/contact-form-template.php:72 includes/contact-form-template.php:106
+msgid "Message Body:"
+msgstr "Садржај поруке:"
+
+#: modules/quiz.php:205
+msgid "Quiz"
+msgstr "Квиз"
+
+#: modules/submit.php:26
+msgid "Send"
+msgstr "Пошаљи"
+
+#: modules/quiz.php:179
+msgid "Sender does not enter the correct answer to the quiz"
+msgstr "Пошиљалац није унео тачан одговор на квиз питање"
+
+#. translators: %s: [your-subject]
+#: includes/contact-form-template.php:69
+msgid "Subject: %s"
+msgstr "Предмет: %s"
+
+#: modules/really-simple-captcha.php:234
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Кôд који је унео пошиљалац не одговара CAPTCHA кôду"
+
+#: modules/really-simple-captcha.php:290
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Овај формулар за контакт садржи поља CAPCHA, али на серверу немате инсталиране потребне библиотеке (GD или FreeType)"
+
+#. translators: %s: Path to the temporary folder
+#: modules/really-simple-captcha.php:278
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Овај формулар за контакт садржи CAPTCHA поља, али привремени директоријум за датотеке (%s) не постоји или није уписив. Можете направити директоријум или ручно променити права приступа."
+
+#: includes/contact-form.php:114 includes/contact-form.php:437
+msgid "Untitled"
+msgstr "Без наслова"
+
+#: includes/file.php:110
+msgid "Uploaded file is not allowed for file type"
+msgstr "Послата датотека је недозвољене врсте"
+
+#: includes/file.php:115
+msgid "Uploaded file is too large"
+msgstr "Послада датотека је превелика"
+
+#: includes/file.php:120
+msgid "Uploading a file fails for PHP error"
+msgstr "Слање датотеке није успело због PHP грешке"
+
+#: includes/file.php:105
+msgid "Uploading a file fails for any reason"
+msgstr "Слање датотеке није успело из непознатог разлога"
+
+#: includes/contact-form-template.php:173
+msgid "Validation errors occurred"
+msgstr "Дошло је до грешке при провери"
+
+#: modules/really-simple-captcha.php:236
+msgid "Your entered code is incorrect."
+msgstr "Унели сте погрешан кôд."
+
+#: modules/date.php:181
+msgid "date"
+msgstr "datum"
+
+#: admin/includes/help-tabs.php:16 admin/includes/help-tabs.php:32
+#: admin/includes/help-tabs.php:54
+msgid "Overview"
+msgstr "Преглед"
+
+#: admin/includes/help-tabs.php:22
+msgid "Available Actions"
+msgstr "Могуће акције."
+
+#: admin/includes/help-tabs.php:38
+msgid "Form-tags"
+msgstr "Тагови форми"
+
+#: admin/includes/help-tabs.php:44
+msgid "Mail-tags"
+msgstr "Тагови за поруке"
+
+#: admin/includes/help-tabs.php:67
+msgid "On this screen, you can manage contact forms provided by Contact Form 7. You can manage an unlimited number of contact forms. Each contact form has a unique ID and Contact Form 7 shortcode ([contact-form-7 ...]). To insert a contact form into a post or a text widget, insert the shortcode into the target."
+msgstr "На екрану, можете да упревљате садржајним формама које предвиђа Contact Form 7.Можете да управљате неограниченим бројем садржајних форми. Свака садржајна форма има јединствену идентификацију и Contact Form 7 кратки код ([contact-form-7 ...]).Да би убацили садржајну форму у пост или текстуални widget, убаците кратки код у одредиште."
+
+#: admin/includes/help-tabs.php:69
+msgid "Hovering over a row in the contact forms list will display action links that allow you to manage your contact form. You can perform the following actions:"
+msgstr "Преласком миша преко реда у листи садржајне форме ће приказати акционе линкове који вам дозвољавају да управљате својом садржајном формом. Можете извршити следеће акције:"
+
+#: admin/includes/help-tabs.php:71
+msgid "<strong>Duplicate</strong> - Clones that contact form. A cloned contact form inherits all content from the original, but has a different ID."
+msgstr "<strong>Duplicate</strong> - Клонира дату садржајну форму. Клонирана садржајна форма наслеђује садржај оригналне, али има другачију идентификацију."
+
+#: admin/includes/help-tabs.php:70
+msgid "<strong>Edit</strong> - Navigates to the editing screen for that contact form. You can also reach that screen by clicking on the contact form title."
+msgstr "<strong>Edit</strong> - Наводи до краја прозора за дату садржајну форму. Такође можете достићи тај прозор кликом на назив садржајне форме."
+
+#: admin/includes/help-tabs.php:73
+msgid "On this screen, you can edit a contact form. A contact form is comprised of the following components:"
+msgstr "У овом прозору, можете уређивати садржајну форму.Садржајна  је сачињена од следећих компоненти:"
+
+#. Description of the plugin
+#: wp-contact-form-7.php
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr "Само још један додатак за контакт форму. Једноставан, али прилагодљив."
+
+#. translators: title of your first contact form. %d: number fixed to '1'
+#: load.php:195
+msgid "Contact form %d"
+msgstr "Контакт форма %d"
+
+#: modules/text.php:213
+msgid "URL"
+msgstr "УРЛ"
+
+#: modules/text.php:212
+msgid "email"
+msgstr "е-пошта"
+
+#: modules/text.php:211
+msgid "text"
+msgstr "текст"
+
+#: modules/text.php:193
+msgid "Telephone number that the sender entered is invalid"
+msgstr "Број телефона који је унет је погрешан"
+
+#: modules/text.php:186
+msgid "URL that the sender entered is invalid"
+msgstr "УРЛ који је унет је погрешан"
+
+#: modules/submit.php:47
+msgid "submit"
+msgstr "пошаљи"
+
+#: modules/select.php:228
+msgid "drop-down menu"
+msgstr "падајући мени"
+
+#: modules/quiz.php:258
+msgid "Questions and answers"
+msgstr "Питања и одговори"
+
+#: modules/quiz.php:196
+msgid "quiz"
+msgstr "квиз"
+
+#: modules/number.php:248
+msgid "Slider"
+msgstr "Слајдер"
+
+#: admin/includes/tag-generator.php:412
+msgid "Max"
+msgstr "Макс."
+
+#: admin/includes/tag-generator.php:393
+msgid "Min"
+msgstr "Мин."
+
+#: modules/date.php:190
+msgid "Date field"
+msgstr "Поље за датум"
+
+#: modules/textarea.php:141
+msgid "text area"
+msgstr "поље текста"
+
+#: modules/text.php:214
+msgid "tel"
+msgstr "тел"
+
+#: modules/number.php:200
+msgid "number"
+msgstr "број"
+
+#: modules/file.php:142
+msgid "file"
+msgstr "датотека"
+
+#: modules/number.php:186
+msgid "Number is larger than maximum limit"
+msgstr "Број је већи од највећег ограничења."
+
+#: modules/date.php:238 modules/number.php:257
+msgid "Range"
+msgstr "Распон"
+
+#: modules/number.php:181
+msgid "Number is smaller than minimum limit"
+msgstr "Број је мањи од минималног ограничења."
+
+#: includes/contact-form-template.php:183
+msgid "There are terms that the sender must accept"
+msgstr "Постоје услови које би пошиљалац требало да прихвати"
+
+#: modules/date.php:157
+msgid "Date format that the sender entered is invalid"
+msgstr "Формат датума који је пошиљалац унео је нетачан."
+
+#: modules/checkbox.php:352
+msgid "radio buttons"
+msgstr "радио дугмад"
+
+#: admin/includes/tag-generator.php:599
+msgid "Insert Tag"
+msgstr "Унеси ознаку."
+
+#: modules/checkbox.php:351
+msgid "checkboxes"
+msgstr "чекбокс"
+
+#: modules/number.php:247
+msgid "Spinbox"
+msgstr "Spinbox"
+
+#: includes/contact-form-template.php:188
+msgid "There is a field that the sender must fill in"
+msgstr "Постоје поља која пошиљалац мора испунити."
+
+#: admin/includes/help-tabs.php:97
+msgid "For more information:"
+msgstr "За више информација:"
+
+#: includes/contact-form.php:52
+msgid "Contact Form"
+msgstr "Контакт форма"
+
+#: modules/number.php:176
+msgid "Number format that the sender entered is invalid"
+msgstr "Број формулара које је пошиљалац унео је погрешан "
+
+#: admin/includes/help-tabs.php:88
+msgid "You may need to first sign up for an account with the service that you plan to use. When you do so, you would need to authorize Contact Form 7 to access the service with your account."
+msgstr "Морате прво да направите налог са услугом коју планирате да користите.Када то урадите,морате да овластите Контакт Формулар 7 да приступи сервису са Вашим налогом."
+
+#: admin/includes/help-tabs.php:87
+msgid "On this screen, you can manage services that are available through Contact Form 7. Using API will allow you to collaborate with any services that are available."
+msgstr "На овом екрану,можете управљати сервисима који су доступни кроз Контакт Форму 7.Коришћење АПИ-ја  ће Вам дозволити  да сарађујете са било којим сервисима који су доступни."
+
+#: modules/date.php:162
+msgid "Date is earlier than minimum limit"
+msgstr "Изабрани датум је пре најмањег могућег"
+
+#: modules/date.php:167
+msgid "Date is later than maximum limit"
+msgstr "Изабрани датум је каснији од највећег могућег"
+
+#. translators: 1: property name, 2: method name
+#: includes/contact-form.php:233
+msgid "<code>%1$s</code> property of a <code>WPCF7_ContactForm</code> object is <strong>no longer accessible</strong>. Use <code>%2$s</code> method instead."
+msgstr "<code>%1$s</code> особина <code>WPCF7_ContactForm</code> објекта <strong>није више доступна</strong>. Користите радије <code>%2$s</code> методу."
+
+#: admin/includes/tag-generator.php:362
+msgid "Class attribute"
+msgstr "Атрибут класе"
+
+#: admin/includes/help-tabs.php:84
+msgid "A mail-tag is also a short code enclosed in square brackets that you can use in every Mail and Mail (2) field. A mail-tag represents a user input value through an input field of a corresponding form-tag."
+msgstr "Ознака за пошту је такође кратак код у угластим заградама које можете користити у сваком пољу поште и пољу поште(2).Ознака за пошту представља корисничку унету вредност кроз поље уноса одговарајуће ознаке формулара."
+
+#: modules/acceptance.php:257
+msgid "acceptance"
+msgstr "Прихватање"
+
+#: includes/contact-form-template.php:193
+msgid "There is a field with input that is longer than the maximum allowed length"
+msgstr "У пољу се налази унос који је дужи од дозољеног максимума"
+
+#: includes/contact-form-template.php:198
+msgid "There is a field with input that is shorter than the minimum allowed length"
+msgstr "У пољу се налази унос који је краћи од дозољеног минимума "
+
+#: admin/includes/help-tabs.php:78
+msgid "In <strong>Messages</strong>, you can edit various types of messages used for this contact form. These messages are relatively short messages, like a validation error message you see when you leave a required field blank."
+msgstr "У <strong>Поруке</strong>, можете уредити различите типове порука које се користе у овом контакт формулару. Ово су релативно кратке поруке, као што је порука грешке при валидацији која се види када обавезно поље остане празно."
+
+#: admin/includes/help-tabs.php:89
+msgid "Any information you provide will not be shared with service providers without your authorization."
+msgstr "Све информације које сте послали неће се делити са пружаоцем услуге без ваше сагласности. "
+
+#. translators: %s: title of form-tag
+#: admin/includes/tag-generator.php:85
+msgid "Form-tag Generator: %s"
+msgstr "Ознака-формулара Генератор: %s"
+
+#: admin/includes/help-tabs.php:81
+msgid "A form-tag is a short code enclosed in square brackets used in a form content. A form-tag generally represents an input field, and its components can be separated into four parts: type, name, options, and values. Contact Form 7 supports several types of form-tags including text fields, number fields, date fields, checkboxes, radio buttons, menus, file-uploading fields, CAPTCHAs, and quiz fields."
+msgstr "Формулар-ознака је кратак код у угластим заградама који се користи у садржају формулара. Формулар-ознака обично представља поље за унос, и његове компоненте могу бити раздвојене на четири дела: врсте, назив, опције и вредности.Контакт Форм 7 подржава подржава неколико врста ознака формулара укључујући текстуална поља, број поља, поље са датумом,чекбоксове,радио дугмад,меније,поља за отпремање фајлова,CAPTCHAs,и поља за квизове."
+
+#: admin/includes/help-tabs.php:74
+msgid "<strong>Title</strong> is the title of a contact form. This title is only used for labeling a contact form, and can be edited."
+msgstr "<strong>Назив</strong> је назив контакт форме. Наслови се користи само за именованје контакт форме и може се променити."
+
+#: admin/includes/help-tabs.php:79
+msgid "<strong>Additional Settings</strong> provides a place where you can customize the behavior of this contact form by adding code snippets."
+msgstr "<strong>Додатна Подешавања</strong>  омогућава место где можете прилагодити понашање контактног формулара тако што ћете додати фрагменте кода."
+
+#: admin/includes/help-tabs.php:77
+msgid "<strong>Mail (2)</strong> is an additional mail template that works similar to Mail. Mail (2) is different in that it is sent only when Mail has been sent successfully."
+msgstr "<strong>Порука (2)</strong> је додатни шаблон поруке који ради слично шаблону Порука. Порука (2) се разликује по томе што се шаље тек кад је Порука успешно послата."
+
+#: admin/includes/help-tabs.php:75
+msgid "<strong>Form</strong> is a content of HTML form. You can use arbitrary HTML, which is allowed inside a form element. You can also use Contact Form 7&#8217;s form-tags here."
+msgstr "<strong>Формулар</strong> је садржај HTML формулара. Можете користити произвољан HTML, који је дозвољен унутар елемента формулара. Може се такође користити CF7 као ознака формулара овде.  "
+
+#: includes/contact-form-template.php:178
+msgid "Submission was referred to as spam"
+msgstr "Послати подаци се сматрају непожељним садржајем"
+
+#: admin/includes/help-tabs.php:76
+msgid "<strong>Mail</strong> manages a mail template (headers and message body) that this contact form will send when users submit it. You can use Contact Form 7&#8217;s mail-tags here."
+msgstr "<strong>Порука</strong> управља подацима поруке(заглавље и тело поруке) које ће овај контактни формулар послати када је корисник достави. Можете користити контактни формулар 7&#8217;s са ознакама порука овде."
+
+#: modules/text.php:179
+msgid "Email address that the sender entered is invalid"
+msgstr "Е-пошта коју је пошиљалац унео је нетачна."
+
+#: admin/includes/tag-generator.php:219
+msgid "Field type"
+msgstr "Тип поља"
+
+#. Plugin URI of the plugin
+#: wp-contact-form-7.php
+msgid "https://contactform7.com/"
+msgstr "https://contactform7.com/"
+
+#: admin/includes/editor.php:521
+msgid "https://contactform7.com/additional-settings/"
+msgstr "https://contactform7.com/additional-settings/"
+
+#: admin/includes/editor.php:432
+msgid "File attachments"
+msgstr "Прилози"
+
+#: modules/submit.php:56
+msgid "Submit button"
+msgstr "Дугме за слање"
+
+#: modules/acceptance.php:266
+msgid "Acceptance checkbox"
+msgstr "Поље за потврду прихватања"
+
+#. translators: %s: the path of the temporary folder
+#: includes/file.php:434
+msgid "This contact form has file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Ова контакт форма има поља за отпремање датотека, али привремена фасцикла за датотеке (%s) не постоји или није уписива. Можете направити фасциклу или ручно променити њену дозволу."
+
+#: includes/contact-form-template.php:39
+msgid "Your email"
+msgstr "Ваша е-пошта"
+
+#: includes/contact-form-template.php:41
+msgid "Your message"
+msgstr "Ваша порука"
+
+#: includes/contact-form-template.php:38
+msgid "Your name"
+msgstr "Ваше име"
+
+#: admin/includes/help-tabs.php:85
+msgid "There are also special mail-tags that have specific names, but do not have corresponding form-tags. They are used to represent meta information of form submissions like the submitter&#8217;s IP address or the URL of the page."
+msgstr "Ту су и посебне ознаке за пошту са специфичним именима, али немају одговарајуће образац-ознаке. Користе се за представљање мета информација о предатим обрасцима, као што су IP адреса предавача или URL странице."
+
+#: admin/edit-contact-form.php:442 admin/includes/editor.php:529
+msgid "Additional Settings"
+msgstr "Допунске поставке"
+
+#: admin/admin.php:30
+msgid "Contact"
+msgstr "Контакт"
+
+#. Plugin Name of the plugin
+#: wp-contact-form-7.php admin/admin.php:29 modules/flamingo.php:219
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: admin/admin.php:636
+msgid "Contact form created."
+msgstr "Формулар за контакт је направљен."
+
+#: admin/admin.php:640
+msgid "Contact form deleted."
+msgstr "Формулар за контакт је уклоњен."
+
+#: admin/admin.php:638
+msgid "Contact form saved."
+msgstr "Формулар за контакт је сачуван."
+
+#: admin/edit-contact-form.php:311
+#: admin/includes/class-contact-forms-list-table.php:83
+msgid "Delete"
+msgstr "Уклони"
+
+#: admin/includes/help-tabs.php:98
+msgid "Docs"
+msgstr "Документација"
+
+#: admin/includes/class-contact-forms-list-table.php:162
+msgid "Edit"
+msgstr "Уреди"
+
+#: admin/includes/help-tabs.php:99
+msgid "FAQ"
+msgstr "ЧПП"
+
+#: admin/edit-contact-form.php:411 admin/includes/editor.php:93
+msgid "Form"
+msgstr "Формулар"
+
+#: admin/edit-contact-form.php:415 admin/includes/editor.php:140
+msgid "Mail"
+msgstr "Пошта"
+
+#: admin/includes/editor.php:131
+msgid "Mail (2)"
+msgstr "Пошта (2)"
+
+#: admin/edit-contact-form.php:419 admin/includes/editor.php:477
+msgid "Messages"
+msgstr "Поруке"
+
+#: admin/edit-contact-form.php:14 admin/edit-contact-form.php:272
+msgid "Save"
+msgstr "Сачувај"
+
+#: admin/admin.php:687
+msgid "Settings"
+msgstr "Поставке"
+
+#: admin/includes/editor.php:300 includes/contact-form-template.php:40
+msgid "Subject"
+msgstr "Предмет"
+
+#: admin/includes/help-tabs.php:100
+msgid "Support"
+msgstr "Подршка"
+
+#: admin/includes/editor.php:416
+msgid "Use HTML content type"
+msgstr "Користи HTML врсту садржаја"
+
+#: admin/includes/class-contact-forms-list-table.php:15
+msgid "Date"
+msgstr "Datum"
+
+#: admin/includes/class-contact-forms-list-table.php:12
+#: includes/block-editor/index.js:1
+msgid "Title"
+msgstr "Naslov"
+
+#: admin/edit-contact-form.php:246
+msgid "Status"
+msgstr "Status"
+
+#: admin/includes/class-contact-forms-list-table.php:14
+msgid "Author"
+msgstr "Autor"
+
+#: admin/includes/editor.php:244
+msgid "To"
+msgstr "За"
+
+#: admin/includes/editor.php:272
+msgid "From"
+msgstr "Од"
+
+#: admin/admin.php:40 admin/edit-contact-form.php:42
+msgid "Edit Contact Form"
+msgstr "Уреди контакт формулар "
+
+#: admin/admin.php:41 admin/admin.php:444 includes/contact-form.php:51
+msgid "Contact Forms"
+msgstr "Контакт формулари"
+
+#: admin/includes/welcome-panel.php:189
+msgid "Dismiss"
+msgstr "Откажи"
+
+#. translators: 1: version of Contact Form 7, 2: version of WordPress, 3: URL
+#: admin/admin.php:705
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr "<strong>Контакт формулар 7 %1$s захтева Вордпрес %2$s или новији.</strong> Прво <a href=\"%3$s\">ажурирајте Вордпрес</a>."
+
+#: admin/admin.php:503
+msgid "Search Contact Forms"
+msgstr "Претражи контакт формуларе"
+
+#: admin/admin.php:727
+msgid "You are not allowed to edit this contact form."
+msgstr "Није дозвољено да мењате садржај контакт форме."
+
+#: admin/edit-contact-form.php:152 admin/edit-contact-form.php:153
+msgid "Enter title here"
+msgstr "Унети наслов овде"
+
+#: admin/admin.php:349
+msgid "Error in deleting."
+msgstr "Грешка у брисању."
+
+#: admin/admin.php:343
+msgid "You are not allowed to delete this item."
+msgstr "Није вам дозвољено да обришете ову ставку."
+
+#: admin/admin.php:245 admin/admin.php:298
+msgid "You are not allowed to edit this item."
+msgstr "Није вам дозвољено да уређујете ову ставку."
+
+#: admin/admin.php:66
+msgid "Integration"
+msgstr "Интеграција"
+
+#: admin/edit-contact-form.php:282
+#: admin/includes/class-contact-forms-list-table.php:180
+msgid "Duplicate"
+msgstr "Дуплирај"
+
+#. translators: %d: number of additional settings
+#: admin/edit-contact-form.php:439
+msgid "Additional Settings (%d)"
+msgstr "Додатна подешавања (%d)"
+
+#. translators: %s: title of contact form
+#: admin/includes/class-contact-forms-list-table.php:115
+msgid "Edit &#8220;%s&#8221;"
+msgstr "Уреди &#8222;%s&#8220;"
+
+#: admin/edit-contact-form.php:205
+msgid "You can also use this old-style shortcode:"
+msgstr "Може се користити такође и овај кратак код старог стила:"
+
+#: admin/includes/class-contact-forms-list-table.php:13
+msgid "Shortcode"
+msgstr "Кратак код"
+
+#: admin/includes/editor.php:216
+msgid "In the following fields, you can use these mail-tags:"
+msgstr "У следећим пољима, можеш да користиш ове ознаке за поруку:"
+
+#: admin/includes/editor.php:132
+msgid "Use Mail (2)"
+msgstr "Користити пошту (2)"
+
+#: admin/includes/editor.php:193
+msgid "Mail (2) is an additional mail template often used as an autoresponder."
+msgstr "Пошта (2) је додатни шаблон поште често коришћен као аутоматски одговор."
+
+#: admin/edit-contact-form.php:173
+msgid "Copy this shortcode and paste it into your post, page, or text widget content:"
+msgstr "Копирај овај кратки код и налепи на свој чланак, страницу, или као садржај текстуалног виџета:"
+
+#: admin/edit-contact-form.php:368 admin/includes/help-tabs.php:98
+msgid "https://contactform7.com/docs/"
+msgstr "https://contactform7.com/docs/"
+
+#: admin/edit-contact-form.php:367 admin/includes/help-tabs.php:99
+msgid "https://contactform7.com/faq/"
+msgstr "https://contactform7.com/faq/"
+
+#: admin/includes/help-tabs.php:100
+msgid "https://contactform7.com/support/"
+msgstr "https://contactform7.com/support/"
+
+#: admin/includes/welcome-panel.php:65 modules/akismet/service.php:64
+msgid "https://contactform7.com/spam-filtering-with-akismet/"
+msgstr "https://contactform7.com/spam-filtering-with-akismet/"
+
+#: admin/includes/welcome-panel.php:113
+msgid "https://contactform7.com/save-submitted-messages-with-flamingo/"
+msgstr "https://contactform7.com/save-submitted-messages-with-flamingo/"
+
+#: admin/includes/editor.php:208
+msgid "https://contactform7.com/setting-up-mail/"
+msgstr "https://contactform7.com/setting-up-mail/"
+
+#: admin/includes/welcome-panel.php:81
+msgid "Contact Form 7 needs your support."
+msgstr "Контакт формулару 7 је потребна ваша подршка."
+
+#: admin/includes/editor.php:328
+msgid "Additional headers"
+msgstr "Додатна заглавља"
+
+#: admin/includes/editor.php:359
+msgid "Message body"
+msgstr "Тело поруке"
+
+#: modules/akismet/service.php:65
+msgid "Spam filtering with Akismet"
+msgstr "Филтрирање спама са Акисметом"
+
+#. translators: date format, see https://www.php.net/date
+#: admin/includes/class-contact-forms-list-table.php:234
+msgid "Y/m/d"
+msgstr "Y/m/d"
