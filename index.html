@@ -217,12 +217,12 @@ var WCF_ADDONS_JS = {"ajaxUrl":"wp-admin/admin-ajax.php","_wpnonce":"3036683dfe"
 }
 
 .hero-gsap-wrapper .scroll-track {
-	height: 560vh;
+	height: 460vh;
 	position: relative;
 }
 
 .hero-gsap-wrapper ._100vh {
-	height: 100vh;
+	height: 20vh;
 	position: relative;
 }
 
@@ -308,6 +308,24 @@ var WCF_ADDONS_JS = {"ajaxUrl":"wp-admin/admin-ajax.php","_wpnonce":"3036683dfe"
 	height: 150px;
 	fill: var(--accent); /* Ista ona neon zelena boja */
 	visibility: hidden;
+	transform-origin: center;
+}
+.hero-gsap-wrapper .end-logo-wrap {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	z-index: 5;
+	visibility: hidden;
+	opacity: 0;
+}
+.hero-gsap-wrapper .end-logo {
+	width: 256px;
+	max-width: 62vw;
+	height: auto;
+	display: block;
 	transform-origin: center;
 }
 
@@ -649,13 +667,14 @@ var WCF_ADDONS_JS = {"ajaxUrl":"wp-admin/admin-ajax.php","_wpnonce":"3036683dfe"
 
 @media screen and (max-width: 767px) {
 	.hero-gsap-wrapper .paragraph-text { font-size: 1.3rem; }
-	.hero-gsap-wrapper .scroll-track { height: 800dvh; }
+	.hero-gsap-wrapper .scroll-track { height: 600dvh; }
 	.hero-gsap-wrapper .sticky { min-height: 100dvh; }
 	.hero-gsap-wrapper .bold-span { font-size: clamp(2.2rem, 8vw, 4rem); }
 	.hero-gsap-wrapper .reveal-circle {
 		width: 90px;
 		height: 90px;
 	}
+	.hero-gsap-wrapper .end-logo { width: 150px; }
 	.hero-gsap-wrapper .ring-wrap {
 		width: 210px;
 		height: 210px;
@@ -847,6 +866,10 @@ var WCF_ADDONS_JS = {"ajaxUrl":"wp-admin/admin-ajax.php","_wpnonce":"3036683dfe"
 </svg>
 </div>
 </div>
+<!-- LOGO koji sleti kad forma odleti; pri scroll-u nazad morph u krug -->
+<div class="end-logo-wrap" aria-hidden="true">
+<img class="end-logo" src="webmajstor/wp-content/uploads/2026/06/logo_webmajstor_256.webp" alt="Web Majstor" draggable="false"/>
+</div>
 <!-- KONTAKT FORMA: nastaje iz kruga -->
 <div class="form-stage-wrap">
 <div class="form-stage">
@@ -942,6 +965,7 @@ window.addEventListener("load", function() {
 	gsap.set(buildStatic, { visibility: "hidden" });
 	gsap.set(tellStatic, { visibility: "hidden" });
 	gsap.set(".reveal-circle", { autoAlpha: 0, scale: 0 });
+	gsap.set(".end-logo-wrap", { autoAlpha: 0, scale: 0.55 });
 	gsap.set(".form-el", { autoAlpha: 0, y: 16 });
 	gsap.set(".page-footer", { autoAlpha: 0 });
 
@@ -996,11 +1020,11 @@ window.addEventListener("load", function() {
 				rotationX: 40,
 				yPercent: -300,
 				xPercent: 100,
-				stagger: 0.05
+				stagger: 0.03
 			})
 			.to([imagineAnimated, buildAnimated, tellAnimated], {
 				x: 0,
-				duration: 2
+				duration: 1.2
 			})
 			.to(
 				[imagineAnimated, buildAnimated, tellAnimated],
@@ -1008,23 +1032,23 @@ window.addEventListener("load", function() {
 					y: 0,
 					fontSize: sloganSize,
 					ease: "sine.in",
-					duration: 1
+					duration: 0.8
 				},
-				">-1"
+				">-0.8"
 			)
 			.to(".is-punctuation", {
 				autoAlpha: 1,
 				fontSize: sloganSize,
-				stagger: 0.5
+				stagger: 0.25
 			})
 			/* ----- NOVI DEO ANIMACIJE ----- */
-			/* 1. Skupljamo ceo kontejner sa rečima u centar i on bledi */
+			/* 1. Skupljamo ceo kontejner sa rečima u centar i on bledi (kraće zadržavanje) */
 			.to(".slogan-final-wrap", {
 				scale: 0,
 				opacity: 0,
-				duration: 1,
+				duration: 0.8,
 				ease: "power2.inOut"
-			}, "+=0.5") /* +=0.5 znači da malo zadržimo tekst pre nego što se uvuče */
+			}, "+=0.15")
 
 			/* 2. Iz centra iskače SVG krug iste boje */
 			.to(".reveal-circle", {
@@ -1032,7 +1056,7 @@ window.addEventListener("load", function() {
 				scale: 1,
 				duration: 1.2,
 				ease: "back.out(1.5)" /* Daje onaj živi "bouncy/skočni" efekat predimenzioniranja pa vraćanja */
-			}, "<0.5"); /* Pokreće krug pre nego što tekst potpuno nestane */
+			}, "<0.3"); /* Pokreće krug pre nego što tekst potpuno nestane */
 
 		/* ----- REFERENCE ----- */
 		/* Oko kruga se pojavljuje rotirajući tekst REFERENCE */
@@ -1070,18 +1094,31 @@ window.addEventListener("load", function() {
 		const morphLabel  = isMobile ? "refs+=6.8" : "refs+=5.2";
 		tl.to(".ring-wrap", { autoAlpha: 0, duration: 0.5 }, refsRingEnd);
 		tl.addLabel("morph", morphLabel);
-		/* Obični .to tweeni umesto set+fromTo — pouzdano se vraćaju pri scrollu unazad */
-		tl.to(".reveal-circle", { autoAlpha: 0, duration: 0.05 }, "morph");
-		tl.to(".form-stage", { autoAlpha: 1, duration: 0.05 }, "morph");
-		tl.to(".form-stage",
-			{ width: formW, height: formH, borderRadius: "26px", duration: 1.55, ease: "power3.inOut" },
-			"morph+=0.05"
-		);
-		tl.to(".form-el", { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 }, "morph+=1.2");
-		tl.to(".page-footer", { autoAlpha: 1, duration: 0.6 }, "morph+=2");
+
+		if (window.__wmSent) {
+			/* POSLE SLANJA: na mestu forme je logo. Scroll nadole: krug -> logo (crossfade + scale);
+			   scroll nazad: logo glatko morph nazad u krug. Forma se više ne gradi. */
+			tl.to(".reveal-circle", { autoAlpha: 0, scale: 0.55, duration: 1.1, ease: "power2.inOut" }, "morph");
+			tl.fromTo(".end-logo-wrap",
+				{ autoAlpha: 0, scale: 0.55 },
+				{ autoAlpha: 1, scale: 1, duration: 1.1, ease: "power2.inOut" },
+				"morph");
+			tl.to(".page-footer", { autoAlpha: 1, duration: 0.6 }, "morph+=1.3");
+		} else {
+			/* Obični .to tweeni umesto set+fromTo — pouzdano se vraćaju pri scrollu unazad */
+			tl.to(".reveal-circle", { autoAlpha: 0, duration: 0.05 }, "morph");
+			tl.to(".form-stage", { autoAlpha: 1, duration: 0.05 }, "morph");
+			tl.to(".form-stage",
+				{ width: formW, height: formH, borderRadius: "26px", duration: 1.55, ease: "power3.inOut" },
+				"morph+=0.05"
+			);
+			tl.to(".form-el", { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 }, "morph+=1.2");
+			tl.to(".page-footer", { autoAlpha: 1, duration: 0.6 }, "morph+=2");
+		}
 
 		tl.progress(progress);
 		window.wmTl = tl; /* izloženo za debug */
+		window.wmCreateTimeline = createTimeline; /* izloženo za debug */
 	}
 
 
@@ -1156,12 +1193,18 @@ window.addEventListener("load", function() {
 		const flyDist = window.innerHeight + 240;
 		const flyX = window.innerWidth * 0.16;
 
-		/* Kad pismo nestane — skrati visinu sajta od dole za 100vh (manje praznog prostora). */
-		function shrinkTrack() {
+		/* Kad pismo nestane: skrati sajt za 100vh, prebaci timeline u "sent" mod
+		   (morph faza = krug<->logo) i pusti logo da sleti sa leve strane. */
+		function afterLetterGone() {
+			window.__wmSent = true;
 			const track = document.querySelector(".scroll-track");
-			if (!track) return;
-			track.style.height = (track.offsetHeight - window.innerHeight) + "px";
+			if (track) track.style.height = (track.offsetHeight - window.innerHeight) + "px";
+			createTimeline(1); /* rebuild scrubbed tl u sent modu, na kraju (progress 1) */
 			if (window.ScrollTrigger) ScrollTrigger.refresh();
+			/* Logo (256px) sleti sa leve strane na mesto gde je bila forma */
+			gsap.fromTo(".end-logo-wrap",
+				{ autoAlpha: 0, scale: 1, x: -(window.innerWidth * 0.7) },
+				{ autoAlpha: 1, scale: 1, x: 0, duration: 0.9, ease: "power3.out" });
 		}
 
 		gsap.timeline({ defaults: { ease: "power3.inOut" } })
@@ -1186,8 +1229,8 @@ window.addEventListener("load", function() {
 			.to(stage,
 				{ y: -flyDist, x: flyX, rotation: 24, scale: 0.5, autoAlpha: 0, duration: 0.95, ease: "power2.in" })
 			.set(stage, { display: "none" })
-			/* 7. Skrati visinu sajta od dole za 100vh */
-			.add(shrinkTrack);
+			/* 7. Skrati visinu, prebaci u sent mod i pusti logo da sleti */
+			.add(afterLetterGone);
 	}
 
 	if (wmForm) {
