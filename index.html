@@ -1090,6 +1090,7 @@ window.addEventListener("load", function() {
 
 	let resizeTimer = null;
 	function handleResize() {
+		if (window.__wmSent) return; /* posle slanja ne rebuilduj — forma je odletela, visina skraćena */
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(function () {
 			/* Prvo ubij timeline (vraća transformacije na početak), TEK ONDA meri pozicije —
@@ -1138,32 +1139,55 @@ window.addEventListener("load", function() {
 	}
 
 	function showSuccessAnimation() {
+		window.__wmSent = true; /* zaključaj: forma se ne vraća (ni na scroll ni na resize) do refresh-a */
 		const stage = document.querySelector(".form-stage");
 		const letter = document.querySelector(".form-letter");
+		const circle = document.querySelector(".check-circle");
+		const mark = document.querySelector(".check-mark");
 
-		/* Odvoji formu od scroll-timeline-a da je scrub NE vrati kad korisnik skroluje
-		   nazad — forma ostaje nestala sve do refresh-a stranice. */
-		gsap.killTweensOf([".form-stage", ".form-el", ".form-inner", ".form-letter"]);
+		/* Odvoji formu od scroll-timeline-a da je scrub NE vrati kad korisnik skroluje nazad. */
+		gsap.killTweensOf([".form-stage", ".form-el", ".form-inner", ".form-letter", ".form-success", circle, mark]);
+
+		const circleLen = circle.getTotalLength();
+		const markLen = mark.getTotalLength();
+		gsap.set(circle, { strokeDasharray: circleLen, strokeDashoffset: circleLen });
+		gsap.set(mark, { strokeDasharray: markLen, strokeDashoffset: markLen });
 
 		const flyDist = window.innerHeight + 240;
 		const flyX = window.innerWidth * 0.16;
 
+		/* Kad pismo nestane — skrati visinu sajta od dole za 100vh (manje praznog prostora). */
+		function shrinkTrack() {
+			const track = document.querySelector(".scroll-track");
+			if (!track) return;
+			track.style.height = (track.offsetHeight - window.innerHeight) + "px";
+			if (window.ScrollTrigger) ScrollTrigger.refresh();
+		}
+
 		gsap.timeline({ defaults: { ease: "power3.inOut" } })
-			/* 1. Sadržaj forme bledi */
+			/* 1. Forma bledi, prikazuje se potvrda da je poruka uspešno poslata */
 			.to(".form-inner", { autoAlpha: 0, scale: 0.92, duration: 0.3, ease: "power1.in" })
-			/* 2. Crvena kartica se skuplja u oblik koverte */
-			.to(stage, { width: 300, height: 200, borderRadius: "16px", duration: 0.6 }, "-=0.08")
-			/* 3. Pismo se pojavljuje (morph) */
+			.set(".form-success", { autoAlpha: 1 })
+			.to(circle, { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" })
+			.to(mark, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" }, "-=0.2")
+			.fromTo(".success-msg", { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.1")
+			/* 2. Pauza 2s da korisnik pročita potvrdu, pa kreće animacija pisma */
+			.to(".form-success", { autoAlpha: 0, duration: 0.35, ease: "power1.in" }, "+=2")
+			/* 3. Crvena kartica se skuplja u oblik koverte */
+			.to(stage, { width: 300, height: 200, borderRadius: "16px", duration: 0.6 }, "<")
+			/* 4. Pismo se pojavljuje (morph) */
 			.fromTo(letter,
 				{ autoAlpha: 0, scale: 0.4, rotation: -8 },
 				{ autoAlpha: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.6)" },
-				"-=0.4")
-			/* 4. Mali "zalet" nadole pre poletanja */
+				"-=0.35")
+			/* 5. Mali "zalet" nadole pre poletanja */
 			.to(stage, { y: "+=16", duration: 0.28, ease: "power1.out" }, "+=0.12")
-			/* 5. Pismo odleti sa ekrana i nestaje */
+			/* 6. Pismo odleti sa ekrana i nestaje */
 			.to(stage,
 				{ y: -flyDist, x: flyX, rotation: 24, scale: 0.5, autoAlpha: 0, duration: 0.95, ease: "power2.in" })
-			.set(stage, { display: "none" });
+			.set(stage, { display: "none" })
+			/* 7. Skrati visinu sajta od dole za 100vh */
+			.add(shrinkTrack);
 	}
 
 	if (wmForm) {
