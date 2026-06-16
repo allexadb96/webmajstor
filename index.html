@@ -516,6 +516,21 @@ var WCF_ADDONS_JS = {"ajaxUrl":"wp-admin/admin-ajax.php","_wpnonce":"3036683dfe"
 	letter-spacing: 0.04em;
 	line-height: 1.7;
 }
+.hero-gsap-wrapper .form-letter {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+}
+.hero-gsap-wrapper .letter-svg {
+	width: 44%;
+	max-width: 140px;
+	height: auto;
+}
 
 .hero-gsap-wrapper .page-footer {
 	position: fixed;
@@ -874,6 +889,11 @@ var WCF_ADDONS_JS = {"ajaxUrl":"wp-admin/admin-ajax.php","_wpnonce":"3036683dfe"
 </svg>
 <p class="success-msg">Hvala, Vaša poruka je poslata.<br/>Uskoro ćemo Vam se javiti.</p>
 </div>
+<div aria-hidden="true" class="form-letter">
+<svg class="letter-svg" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M510.678,112.275c-2.308-11.626-7.463-22.265-14.662-31.054c-1.518-1.915-3.104-3.63-4.823-5.345c-12.755-12.818-30.657-20.814-50.214-20.814H71.021c-19.557,0-37.395,7.996-50.21,20.814c-1.715,1.715-3.301,3.43-4.823,5.345C8.785,90.009,3.63,100.649,1.386,112.275C0.464,116.762,0,121.399,0,126.087V385.92c0,9.968,2.114,19.55,5.884,28.203c3.497,8.26,8.653,15.734,14.926,22.001c1.59,1.586,3.169,3.044,4.892,4.494c12.286,10.175,28.145,16.32,45.319,16.32h369.958c17.18,0,33.108-6.145,45.323-16.384c1.718-1.386,3.305-2.844,4.891-4.43c6.27-6.267,11.425-13.741,14.994-22.001v-0.064c3.769-8.653,5.812-18.171,5.812-28.138V126.087C512,121.399,511.543,116.762,510.678,112.275z M46.509,101.571c6.345-6.338,14.866-10.175,24.512-10.175h369.958c9.646,0,18.242,3.837,24.512,10.175c1.122,1.129,2.179,2.387,3.112,3.637L274.696,274.203c-5.348,4.687-11.954,7.002-18.696,7.002c-6.674,0-13.276-2.315-18.695-7.002L43.472,105.136C44.33,103.886,45.387,102.7,46.509,101.571z M36.334,385.92V142.735L176.658,265.15L36.405,387.435C36.334,386.971,36.334,386.449,36.334,385.92z M440.979,420.597H71.021c-6.281,0-12.158-1.651-17.174-4.552l147.978-128.959l13.815,12.018c11.561,10.046,26.028,15.134,40.36,15.134c14.406,0,28.872-5.088,40.432-15.134l13.808-12.018l147.92,128.959C453.137,418.946,447.26,420.597,440.979,420.597z M475.666,385.92c0,0.529,0,1.051-0.068,1.515L335.346,265.221L475.666,142.8V385.92z" fill="#0a0a0a"></path>
+</svg>
+</div>
 </div>
 </div>
 <p class="page-footer">© 2026 Web Majstor — Web dizajn · Automatizacija procesa · QA testiranje</p>
@@ -1118,19 +1138,32 @@ window.addEventListener("load", function() {
 	}
 
 	function showSuccessAnimation() {
-		const circle = document.querySelector(".check-circle");
-		const mark = document.querySelector(".check-mark");
-		const circleLen = circle.getTotalLength();
-		const markLen = mark.getTotalLength();
-		gsap.set(circle, { strokeDasharray: circleLen, strokeDashoffset: circleLen });
-		gsap.set(mark, { strokeDasharray: markLen, strokeDashoffset: markLen });
+		const stage = document.querySelector(".form-stage");
+		const letter = document.querySelector(".form-letter");
 
-		gsap.timeline()
-			.to(".form-inner", { autoAlpha: 0, y: -14, duration: 0.35, ease: "power1.in" })
-			.set(".form-success", { autoAlpha: 1 })
-			.to(circle, { strokeDashoffset: 0, duration: 0.8, ease: "power2.out" })
-			.to(mark, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, "-=0.25")
-			.fromTo(".success-msg", { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.1");
+		/* Odvoji formu od scroll-timeline-a da je scrub NE vrati kad korisnik skroluje
+		   nazad — forma ostaje nestala sve do refresh-a stranice. */
+		gsap.killTweensOf([".form-stage", ".form-el", ".form-inner", ".form-letter"]);
+
+		const flyDist = window.innerHeight + 240;
+		const flyX = window.innerWidth * 0.16;
+
+		gsap.timeline({ defaults: { ease: "power3.inOut" } })
+			/* 1. Sadržaj forme bledi */
+			.to(".form-inner", { autoAlpha: 0, scale: 0.92, duration: 0.3, ease: "power1.in" })
+			/* 2. Crvena kartica se skuplja u oblik koverte */
+			.to(stage, { width: 300, height: 200, borderRadius: "16px", duration: 0.6 }, "-=0.08")
+			/* 3. Pismo se pojavljuje (morph) */
+			.fromTo(letter,
+				{ autoAlpha: 0, scale: 0.4, rotation: -8 },
+				{ autoAlpha: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.6)" },
+				"-=0.4")
+			/* 4. Mali "zalet" nadole pre poletanja */
+			.to(stage, { y: "+=16", duration: 0.28, ease: "power1.out" }, "+=0.12")
+			/* 5. Pismo odleti sa ekrana i nestaje */
+			.to(stage,
+				{ y: -flyDist, x: flyX, rotation: 24, scale: 0.5, autoAlpha: 0, duration: 0.95, ease: "power2.in" })
+			.set(stage, { display: "none" });
 	}
 
 	if (wmForm) {
